@@ -1,0 +1,154 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* 노인 친화적 색상 토큰으로 업데이트 */
+  --background: oklch(1 0 0); /* #ffffff - 깨끗한 흰색 배경 */
+  --foreground: oklch(0.35 0 0); /* #475569 - 높은 대비의 어두운 회색 텍스트 */
+  --card: oklch(0.97 0 0); /* #f1f5f9 - 부드러운 회색 카드 배경 */
+  --card-foreground: oklch(0.35 0 0); /* #475569 - 카드 텍스트 */
+  --popover: oklch(1 0 0); /* #ffffff - 팝오버 배경 */
+  --popover-foreground: oklch(0.35 0 0); /* #475569 - 팝오버 텍스트 */
+  --primary: oklch(0.45 0.15 160); /* #059669 - 신뢰감 있는 에메랄드 그린 */
+  --primary-foreground: oklch(1 0 0); /* #ffffff - 기본 버튼 텍스트 */
+  --secondary: oklch(0.55 0.12 160); /* #10b981 - 보조 액션 색상 */
+  --secondary-foreground: oklch(1 0 0); /* #ffffff - 보조 버튼 텍스트 */
+  --muted: oklch(0.97 0 0); /* #f1f5f9 - 음소거된 배경 */
+  --muted-foreground: oklch(0.35 0 0); /* #475569 - 음소거된 텍스트 */
+  --accent: oklch(0.55 0.12 160); /* #10b981 - 강조 색상 */
+  --accent-foreground: oklch(1 0 0); /* #ffffff - 강조 텍스트 */
+  --destructive: oklch(0.55 0.22 25); /* #ea580c - 삭제/경고 색상 */
+  --destructive-foreground: oklch(1 0 0); /* #ffffff - 삭제 버튼 텍스트 */
+  --border: oklch(0.85 0 0); /* #d1d5db - 테두리 색상 */
+  --input: oklch(1 0 0); /* #ffffff - 입력 필드 배경 */
+  --ring: oklch(0.45 0.15 160 / 0.5); /* 포커스 링 색상 */
+  --chart-1: oklch(0.45 0.15 160); /* #059669 - 차트 색상 1 */
+  --chart-2: oklch(0.55 0.12 160); /* #10b981 - 차트 색상 2 */
+  --chart-3: oklch(0.35 0 0); /* #475569 - 차트 색상 3 */
+  --chart-4: oklch(0.85 0 0); /* #d1d5db - 차트 색상 4 */
+  --chart-5: oklch(0.97 0 0); /* #f1f5f9 - 차트 색상 5 */
+  --radius: 0.5rem; /* 8px - 적당한 모서리 둥글기 */
+  --sidebar: oklch(0.97 0 0); /* #f1f5f9 - 사이드바 배경 */
+  --sidebar-foreground: oklch(0.35 0 0); /* #475569 - 사이드바 텍스트 */
+  --sidebar-primary: oklch(0.45 0.15 160); /* #059669 - 사이드바 기본 색상 */
+  --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff - 사이드바 기본 텍스트 */
+  --sidebar-accent: oklch(0.55 0.12 160); /* #10b981 - 사이드바 강조 색상 */
+  --sidebar-accent-foreground: oklch(1 0 0); /* #ffffff - 사이드바 강조 텍스트 */
+  --sidebar-border: oklch(0.85 0 0); /* #d1d5db - 사이드바 테두리 */
+  --sidebar-ring: oklch(0.45 0.15 160 / 0.5); /* 사이드바 포커스 링 */
+}
+
+.dark {
+  /* 다크 모드도 노인 친화적으로 조정 - 높은 대비 유지 */
+  --background: oklch(0.15 0 0); /* 어두운 배경 */
+  --foreground: oklch(0.95 0 0); /* 밝은 텍스트 */
+  --card: oklch(0.2 0 0); /* 어두운 카드 배경 */
+  --card-foreground: oklch(0.95 0 0); /* 밝은 카드 텍스트 */
+  --popover: oklch(0.15 0 0); /* 어두운 팝오버 배경 */
+  --popover-foreground: oklch(0.95 0 0); /* 밝은 팝오버 텍스트 */
+  --primary: oklch(0.55 0.12 160); /* 다크 모드 기본 색상 */
+  --primary-foreground: oklch(0.15 0 0); /* 다크 모드 기본 텍스트 */
+  --secondary: oklch(0.3 0 0); /* 다크 모드 보조 색상 */
+  --secondary-foreground: oklch(0.95 0 0); /* 다크 모드 보조 텍스트 */
+  --muted: oklch(0.3 0 0); /* 다크 모드 음소거 배경 */
+  --muted-foreground: oklch(0.7 0 0); /* 다크 모드 음소거 텍스트 */
+  --accent: oklch(0.3 0 0); /* 다크 모드 강조 배경 */
+  --accent-foreground: oklch(0.95 0 0); /* 다크 모드 강조 텍스트 */
+  --destructive: oklch(0.5 0.22 25); /* 다크 모드 삭제 색상 */
+  --destructive-foreground: oklch(0.95 0 0); /* 다크 모드 삭제 텍스트 */
+  --border: oklch(0.3 0 0); /* 다크 모드 테두리 */
+  --input: oklch(0.3 0 0); /* 다크 모드 입력 필드 */
+  --ring: oklch(0.55 0.12 160 / 0.5); /* 다크 모드 포커스 링 */
+  --chart-1: oklch(0.55 0.12 160); /* 다크 모드 차트 색상들 */
+  --chart-2: oklch(0.65 0.15 160);
+  --chart-3: oklch(0.7 0 0);
+  --chart-4: oklch(0.4 0 0);
+  --chart-5: oklch(0.3 0 0);
+  --sidebar: oklch(0.2 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.55 0.12 160);
+  --sidebar-primary-foreground: oklch(0.15 0 0);
+  --sidebar-accent: oklch(0.3 0 0);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.3 0 0);
+  --sidebar-ring: oklch(0.55 0.12 160 / 0.5);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* 노인분들을 위한 기본 폰트 크기 증가 */
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  /* 노인 친화적 추가 스타일 */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+    line-height: 1.4;
+  }
+
+  button,
+  [role="button"] {
+    min-height: 48px; /* 터치하기 쉬운 최소 크기 */
+    min-width: 48px;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 18px; /* 입력 필드 폰트 크기 증가 */
+    padding: 12px 16px; /* 더 큰 패딩 */
+  }
+}
